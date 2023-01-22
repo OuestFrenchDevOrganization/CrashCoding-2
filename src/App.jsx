@@ -1,9 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
+import styled from "styled-components";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
@@ -17,9 +18,12 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <CounterButton
+          color={"blue"}
+          onClick={() => setCount((count) => count + 1)}
+        >
           count is {count}
-        </button>
+        </CounterButton>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
@@ -28,7 +32,11 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </div>
-  )
+  );
 }
 
-export default App
+const CounterButton = styled.button`
+  color: ${(p) => p.color ?? "red"};
+`;
+
+export default App;
