@@ -23,7 +23,7 @@ function App() {
         >
           count is {count}
         </CounterButton>
-        <p>
+        <p style={{ color: "var(--color-grey)" }}>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
